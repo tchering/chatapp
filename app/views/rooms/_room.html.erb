@@ -1,0 +1,4 @@
+<div class= "d-flex justify-content-between">
+    <%= link_to room.name, room %> <%#! room is local variable created when using rendered @rooms %>
+      <%= link_to "Del", room_path(room), method: :delete, data: { turbo_action: "replace", turbo_method: "delete", turbo_confirm: "Are you sure?" }%>
+</div>

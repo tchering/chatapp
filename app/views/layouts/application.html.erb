@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+    <style>
+  <%= ".msg-#{current_user&.id}" %> {
+  background-color: #007bff !important;
+  padding: 10px;
+  }
+  <%= ".cont-#{current_user&.id}" %> {
+  display: flex;
+  justify-content: flex-end
+  }
+</style>
+
     <title>Chatapp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
+    <%= render "layouts/navbar"%>
+    <%= flash.each do |message,message_typ|%>
+      <div>
+        
+      </div>
+    <%end%>
     <%= yield %>
   </body>
 </html>

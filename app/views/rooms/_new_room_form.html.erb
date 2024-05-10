@@ -1,0 +1,7 @@
+<%= form_with(model: @room, remote: true, class: "d-flex") do |f| %>
+    <%= f.text_field :name, class: "form-control", autocomplete: "off" %>
+    <%= f.submit data: { disable_with: false } %>
+    <%#todo by default when form is submitted , the submit button is automatically disabled to prevent multiple submissions. Setting disable_with: false user will can click the submit button again immediately after submitting form %>
+    <%#!This is important here becuase we want user can create many rooms as they want without issue %>
+
+<% end %>

@@ -1,0 +1,12 @@
+<%#! model: [@single_room, @message] is specifying the model objects that the form is associated with. In this case, it's associated with an instance of the Room model (@single_room) and an instance of the Message model (@message). Because you're passing an array of objects, Rails will create a form for a nested resource. It will try to generate the form's action URL using the room_messages_path method, which is why you needed to define messages as a nested resource under rooms in your routes. %>
+
+<div class="form-group msg-form w-75 ">
+  <%= form_with(model: [@single_room ,@message], remote: true, class: "d-flex" ) do |f| %>
+    <%= f.text_field :content, id: 'chat-text', class: "form-control msg-content", autocomplete: 'off' %>
+    <%= f.submit data: { disable_with: false }, class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<%# ! when the message is sent from this form . the room_id will also be sent in params  %>
+
+
