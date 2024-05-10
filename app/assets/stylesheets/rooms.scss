@@ -4,11 +4,6 @@
   width: 90%;
 }
 
-.col-md-9 {
-  height: 50vh;
-  overflow: scroll;
-}
-
 .msg-content {
   width: 80%;
   margin-right: 5px;
@@ -29,4 +24,24 @@
 
 .single_room_name {
   border-bottom: 1px solid white;
+}
+
+
+.chat-container {
+  position: relative;
+  height: 50vh; // Adjust this value as needed
+  padding-bottom: 50px; // Adjust this value based on the height of your form
+  box-sizing: border-box; // Include padding in element's total height
+  overflow: auto; // Enable scrolling
+}
+
+#messages {
+  max-height: calc(50vh - 100px); // Adjust this value as needed
+  overflow: auto; // Enable scrolling
+}
+
+.msg-form {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
 }

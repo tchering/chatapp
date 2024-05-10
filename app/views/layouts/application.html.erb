@@ -2,6 +2,9 @@
 <html>
   <head>
 
+<%# "Get the ID of the currently logged in user. But if there is no user logged in (meaning current_user is nil), then don't try to get the ID and just return nil instead."
+
+The &. is a safe navigation operator in Ruby. It's used to prevent an error that would occur if you try to call a method (like .id) on nil. %>
     <style>
   <%= ".msg-#{current_user&.id}" %> {
   background-color: #007bff !important;

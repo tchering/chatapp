@@ -1,6 +1,9 @@
 
 <div class="cont-<%= message.user.id %>">
   <div class="message-box msg-<%= message.user.id %> " >
+<%# The message-box class applies to all messages, regardless of who sent them. This is why all messages have a default background color of #555555 and a padding of 10px. %>
+
+<%# However, for the currently logged in user, an additional class is added to their messages: msg-#{current_user.id} in application.html.erb. This class is used to apply additional styles to the current user's messages. In your case, it changes the background color to #007bff. %>
     <% unless message.room.is_private %>
       <h6 class="name"> <%= message.user.username %> </h6>
     <% end %>
